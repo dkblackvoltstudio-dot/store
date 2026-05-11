@@ -1,0 +1,484 @@
+/* ============================================================
+   ELECTRO WORLD — ANIMATIONS
+   Add this file as: <link rel="stylesheet" href="animations.css">
+   in your <head>, AFTER style.css
+   ============================================================ */
+
+/* ==================== KEYFRAMES ==================== */
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideLeft {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(-50%) translateY(0px); }
+    50%       { transform: translateY(-50%) translateY(-18px); }
+}
+
+@keyframes heroGradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 10px 30px rgba(255,149,0,0.3); }
+    50%       { box-shadow: 0 10px 50px rgba(255,149,0,0.7), 0 0 0 8px rgba(255,149,0,0.15); }
+}
+
+@keyframes cartBounce {
+    0%, 100% { transform: scale(1); }
+    20%       { transform: scale(1.4) rotate(-10deg); }
+    40%       { transform: scale(0.9) rotate(5deg); }
+    60%       { transform: scale(1.2) rotate(-5deg); }
+    80%       { transform: scale(0.95); }
+}
+
+@keyframes badgePop {
+    0%   { transform: scale(0); opacity: 0; }
+    70%  { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes spinIn {
+    from { transform: rotate(-180deg) scale(0); opacity: 0; }
+    to   { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+@keyframes ripple {
+    to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes navUnderlineGrow {
+    from { width: 0; }
+    to   { width: 100%; }
+}
+
+@keyframes loginPanelEntrance {
+    from { opacity: 0; transform: translateX(60px) scale(0.95); }
+    to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes loginBrandPop {
+    0%   { opacity: 0; transform: scale(0.5) rotate(-5deg); }
+    80%  { transform: scale(1.05) rotate(1deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes typewriterBlink {
+    0%, 100% { border-color: rgba(255,255,255,0.8); }
+    50%       { border-color: transparent; }
+}
+
+@keyframes productReveal {
+    from { opacity: 0; transform: translateY(50px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes filterBtnSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollBtnAppear {
+    from { opacity: 0; transform: scale(0) rotate(180deg); }
+    to   { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.6; }
+    50%       { opacity: 1; }
+}
+
+@keyframes priceCountUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sectionTitleReveal {
+    from { opacity: 0; transform: translateY(30px); clip-path: inset(0 100% 0 0); }
+    to   { opacity: 1; transform: translateY(0); clip-path: inset(0 0% 0 0); }
+}
+
+/* ==================== HERO SECTION ==================== */
+
+/* Animated gradient hero background */
+.hero {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #4776E6);
+    background-size: 300% 300%;
+    animation: heroGradientShift 8s ease infinite;
+}
+
+/* Hero text staggered entrance */
+.hero-content h1 {
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.hero-content p {
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.hero-content .cta-btn {
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both,
+               pulseGlow 2.5s ease-in-out 1.5s infinite;
+}
+
+/* Floating hero slider */
+.hero-slider {
+    animation: fadeSlideLeft 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+    /* Override the transform: translateY(-50%) while keeping float */
+}
+
+.hero-slider {
+    animation: fadeSlideLeft 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both,
+               heroFloat 4s ease-in-out 1.3s infinite;
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(-50%) translateY(0px); }
+    50%       { transform: translateY(-50%) translateY(-14px); }
+}
+
+/* ==================== NAVIGATION ==================== */
+
+/* Header entrance */
+.header {
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Nav links — enhanced hover with slide underline */
+.nav-link {
+    transition: color 0.3s, letter-spacing 0.3s;
+}
+
+.nav-link:hover {
+    letter-spacing: 0.02em;
+}
+
+/* Cart icon bounce on add-to-cart */
+.cart-icon.bounce {
+    animation: cartBounce 0.6s ease;
+}
+
+/* Cart count badge pop */
+.cart-count {
+    animation: badgePop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    transition: transform 0.2s;
+}
+
+/* ==================== LOGIN PAGE ==================== */
+
+/* Login panel slide in from right — FAST */
+.login-panel {
+    animation: loginPanelEntrance 0.12s cubic-bezier(0.22, 1, 0.36, 1) 0s both;
+}
+
+/* Login brand icon spin-in */
+.login-container h2 i {
+    display: inline-block;
+    animation: spinIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both;
+}
+
+/* Login brand text pop */
+.login-container h2 {
+    animation: loginBrandPop 0.12s cubic-bezier(0.34, 1.56, 0.64, 1) 0s both;
+}
+
+/* Tab buttons slide up */
+.tab-buttons {
+    animation: fadeSlideUp 0.4s ease 0.1s both;
+}
+
+/* Form groups stagger in */
+.form-group:nth-child(1) { animation: fadeSlideUp 0.2s ease 0.12s both; }
+.form-group:nth-child(2) { animation: fadeSlideUp 0.2s ease 0.18s both; }
+.form-group:nth-child(3) { animation: fadeSlideUp 0.2s ease 0.24s both; }
+
+/* Login buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Ripple effect on button click */
+.btn .ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* Input focus glow animation */
+.form-group input {
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.form-group input:focus {
+    transform: scale(1.01);
+}
+
+/* ==================== FILTER BUTTONS ==================== */
+
+/* Stagger filter buttons on load */
+.filter-btn:nth-child(1) { animation: filterBtnSlide 0.4s ease 0.1s both; }
+.filter-btn:nth-child(2) { animation: filterBtnSlide 0.4s ease 0.2s both; }
+.filter-btn:nth-child(3) { animation: filterBtnSlide 0.4s ease 0.3s both; }
+.filter-btn:nth-child(4) { animation: filterBtnSlide 0.4s ease 0.4s both; }
+.filter-btn:nth-child(5) { animation: filterBtnSlide 0.4s ease 0.5s both; }
+.filter-btn:nth-child(6) { animation: filterBtnSlide 0.4s ease 0.6s both; }
+
+/* Filter button active shimmer */
+.filter-btn.active {
+    background: linear-gradient(90deg, #007AFF, #0056b3, #007AFF);
+    background-size: 200% auto;
+    animation: shimmer 2s linear infinite;
+    color: white;
+    border-color: transparent;
+}
+
+/* ==================== PRODUCT CARDS ==================== */
+
+/* Cards revealed by scroll (JS adds .visible class) */
+.product-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.3s ease;
+}
+
+.product-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Stagger each card by its position */
+.product-card:nth-child(3n+2) { transition-delay: 0.1s; }
+.product-card:nth-child(3n+3) { transition-delay: 0.2s; }
+
+/* Card hover — lift + shadow glow */
+.product-card:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 25px 60px rgba(0,122,255,0.15), 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Product badge pop-in */
+.product-badge {
+    animation: badgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+
+/* Product image zoom on card hover */
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-image img {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Price animate in */
+.product-price {
+    animation: priceCountUp 0.4s ease both;
+}
+
+/* Add to Cart button shimmer on hover */
+.add-to-cart {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.add-to-cart::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.add-to-cart:hover::after {
+    left: 150%;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 28px rgba(0,122,255,0.4) !important;
+}
+
+/* Wishlist button pulse */
+.wishlist-btn {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.25) !important;
+}
+
+.wishlist-btn:active {
+    transform: scale(0.9) !important;
+}
+
+/* ==================== SECTION TITLE ==================== */
+
+.section-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+}
+
+.section-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animated underline on section title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007AFF, #764ba2);
+    border-radius: 2px;
+    margin: 12px auto 0;
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+.section-title.visible::after {
+    width: 80px;
+}
+
+/* ==================== SCROLL TO TOP BUTTON ==================== */
+
+#scrollToTopBtn {
+    transition: opacity 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+#scrollToTopBtn:hover {
+    transform: rotate(180deg) scale(1.15) !important;
+    background: #0056b3 !important;
+}
+
+/* ==================== MODAL ANIMATIONS ==================== */
+
+/* Cart & Checkout modals slide in */
+.modal-content {
+    animation: fadeSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Cart item entrance */
+.cart-item {
+    animation: slideInLeft 0.4s ease both;
+}
+
+/* ==================== ADMIN PANEL ==================== */
+
+#adminPanel {
+    animation: fadeSlideLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ==================== FOOTER ==================== */
+
+.footer-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-section:nth-child(2) { transition-delay: 0.15s; }
+.footer-section:nth-child(3) { transition-delay: 0.3s; }
+
+/* Social links hover spin */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s;
+}
+
+.social-links a:hover {
+    transform: rotate(15deg) scale(1.3);
+    color: #007AFF !important;
+}
+
+/* ==================== NOTIFICATION TOAST ==================== */
+
+/* Override the inline styles for a smoother animation */
+.notification {
+    animation: slideInLeft 0.4s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+}
+
+/* ==================== HERO CTA BUTTON ==================== */
+
+.cta-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.cta-btn:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+
+/* ==================== LOADING DOTS for empty states ==================== */
+
+@keyframes dotBounce {
+    0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+    40%            { transform: scale(1); opacity: 1; }
+}
+
+/* ==================== SMOOTH PAGE TRANSITIONS ==================== */
+
+#mainContent {
+    animation: fadeIn 0.5s ease both;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
